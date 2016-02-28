@@ -4,8 +4,30 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= localized_country_select(:user, :country, [], {:include_blank => 'please choose ...'}) %>
+  </div>
+
+  <div class="field">
+    <div><%= f.label :gender, "male", :value => true %>
+    <%= f.radio_button :gender, true %></div>
+    <div><%= f.label :gender, "female", :value => false %>
+    <%= f.radio_button :gender, false %></div>
   </div>
 
   <div class="field">

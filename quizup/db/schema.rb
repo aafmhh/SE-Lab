@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225151350) do
+ActiveRecord::Schema.define(version: 20160228130246) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20160225151350) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.boolean  "gender"
+    t.string   "country"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
