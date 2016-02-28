@@ -1,51 +1,52 @@
-<h2>Sign up</h2>
+<html dir="rtl">
+  <h2>ثبت نام</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label :نام %><br />
+      <%= f.text_field :firstname, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label ("نام خانوادگی") %><br />
+      <%= f.text_field :lastname, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label ("آدرس ایمیل") %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= localized_country_select(:user, :country, [], {:include_blank => 'please choose ...'}) %>
-  </div>
+    <div class="field">
+      <%= f.label ("کشور") %><br />
+      <%= localized_country_select(:user, :country, [], {:include_blank => 'کشور خود را انتخاب کنید'}) %>
+    </div>
 
-  <div class="field">
-    <div><%= f.label :gender, "male", :value => true %>
-    <%= f.radio_button :gender, true %></div>
-    <div><%= f.label :gender, "female", :value => false %>
-    <%= f.radio_button :gender, false %></div>
-  </div>
+    <div class="field">
+      <div><%= f.label ("جنسیت"), "مرد", :value => true %>
+      <%= f.radio_button :gender, true %></div>
+      <div><%= f.label ("جنسیت"), "زن", :value => false %>
+      <%= f.radio_button :gender, false %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label ("رمز عبور") %>
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> حداقل طول کلمه عبور)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label ("تکرار رمز عبور") %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
+    <div class="actions">
+      <%= f.submit "ثبت" %>
+    </div>
+  <% end %>
+</html>
 <%= render "devise/shared/links" %>
