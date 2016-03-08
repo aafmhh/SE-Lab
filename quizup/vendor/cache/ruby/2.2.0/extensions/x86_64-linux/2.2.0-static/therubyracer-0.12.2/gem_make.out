@@ -1,0 +1,47 @@
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/therubyracer-0.12.2/ext/v8
+/usr/local/bin/ruby -r ./siteconf20160228-31386-9u69nl.rb extconf.rb 
+checking for main() in -lpthread... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/extensions/x86_64-linux/2.2.0-static/therubyracer-0.12.2/mkmf.log
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR=" clean
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR="
+compiling v8.cc
+compiling constraints.cc
+compiling invocation.cc
+compiling heap.cc
+compiling backref.cc
+compiling template.cc
+compiling object.cc
+compiling accessor.cc
+compiling stack.cc
+compiling date.cc
+compiling gc.cc
+compiling script.cc
+compiling value.cc
+compiling primitive.cc
+compiling signature.cc
+compiling constants.cc
+compiling message.cc
+compiling function.cc
+compiling external.cc
+compiling init.cc
+compiling rr.cc
+compiling locker.cc
+compiling handles.cc
+compiling string.cc
+compiling array.cc
+compiling trycatch.cc
+compiling context.cc
+compiling exception.cc
+linking shared-object v8/init.so
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/therubyracer-0.12.2/ext/v8
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 init.so ./.gem.20160228-31386-au5ooy/v8

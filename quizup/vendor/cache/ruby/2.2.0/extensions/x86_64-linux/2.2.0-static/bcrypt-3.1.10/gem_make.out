@@ -1,0 +1,19 @@
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/bcrypt-3.1.10/ext/mri
+/usr/local/bin/ruby -r ./siteconf20160228-12780-1wpecmp.rb extconf.rb 
+creating Makefile
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR="
+compiling crypt_blowfish.c
+compiling crypt.c
+compiling bcrypt_ext.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/zahra/SE-Lab/quizup/vendor/cache/ruby/2.2.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20160228-12780-gp2li3

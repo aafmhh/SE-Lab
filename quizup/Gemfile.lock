@@ -128,6 +128,7 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    recaptcha (0.3.6)
     ref (2.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -141,6 +142,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_captcha2 (0.4.0)
+      rails (>= 4.1)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -190,8 +193,10 @@ DEPENDENCIES
   less-rails
   localized_country_select (>= 0.9.11)
   rails (= 4.2.0)
+  recaptcha (~> 0.3.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_captcha2
   spring
   sqlite3
   therubyracer
