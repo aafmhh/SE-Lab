@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>لیست سوالات</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>  متن سوال </th>
+      <th>‍‍‍‍‍‍پاسخ اشتباه اول </th>
+      <th>پاسخ اشتباه دوم</th>
+      <th>پاسخ اشتباه سوم </th>
+      <th>پاسخ صحیح</th>
+      <th>عنوان</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.qtext %></td>
+        <td><%= question.wrong1 %></td>
+        <td><%= question.wrong2 %></td>
+        <td><%= question.wrong3 %></td>
+        <td><%= question.correct %></td>
+        <td><%= question.topic_id %></td>
+        <td><%= link_to 'نمایش ', question %></td>
+        <td><%= link_to 'ویرایش', edit_question_path(question) %></td>
+        <td><%= link_to 'حذف', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'سوال جدید', new_question_path %>
+<%= link_to 'بازگشت', topics_path %>

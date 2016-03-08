@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<h1>search result</h1>
+<%= form_tag(categories_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "search Categories" %>
+<%= submit_tag "search"%>
+<% end %>

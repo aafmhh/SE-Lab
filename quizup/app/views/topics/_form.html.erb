@@ -1,0 +1,24 @@
+<%= simple_form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name ,label: 'نام'%>
+ <!--<%= f.input :language ,label: 'زبان'%> --> 
+  <%= f.association :category, label: 'دسته‌بندی' ,include_blank: false%>
+  <!--<% f.association :user ,label: 'کاربر', value_method: :id %> -->
+  <%= f.hidden_field :user_id , :value => current_user.id%>
+
+  <%= f.button :button, "ایجاد کوییز" %>
+
+
+<% end %>
+

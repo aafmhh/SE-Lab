@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :questions
+
+  resources :topics
+   #match "/topics/mytopics" => "topics#mytopics", :via => :get
+
+  resources :categories
+
   devise_for :users
   get 'home/index'
 
@@ -12,6 +19,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do 
     get 'users/sign_out' => "devise/sessions#destroy"
+    
   end
 
   # Example of regular route:

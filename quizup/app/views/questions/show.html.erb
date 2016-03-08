@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qtext:</strong>
+  <%= @question.qtext %>
+</p>
+
+<p>
+  <strong>Wrong1:</strong>
+  <%= @question.wrong1 %>
+</p>
+
+<p>
+  <strong>Wrong2:</strong>
+  <%= @question.wrong2 %>
+</p>
+
+<p>
+  <strong>Wrong3:</strong>
+  <%= @question.wrong3 %>
+</p>
+
+<p>
+  <strong>Correct:</strong>
+  <%= @question.correct %>
+</p>
+
+<%= link_to 'ویرایش', edit_question_path(@question) %> |
+<%= link_to 'لیست سوالات', questions_path %>
+<%= link_to 'بازگشت', new_question_path(@question) %>

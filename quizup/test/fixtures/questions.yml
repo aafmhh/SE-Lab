@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qtext: MyText
+  wrong1: MyString
+  wrong2: MyString
+  wrong3: MyString
+  correct: MyString
+  topic_id: 1
+
+two:
+  qtext: MyText
+  wrong1: MyString
+  wrong2: MyString
+  wrong3: MyString
+  correct: MyString
+  topic_id: 1

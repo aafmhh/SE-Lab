@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= form_tag(categories_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "جستجو دسته‌بندی‌ها" %>
+<%= submit_tag " جستجو"%>
+<% end %>
+
+
+<h2>  لیست دسته‌بندی‌ها</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>نام</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to '    نمایش    ', category %></td>
+        <td><%= link_to 'ویرایش', edit_category_path(category) %></td>
+        <td><%= link_to 'حذف', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'دسته‌بندی جدید', new_category_path %>
+<%= link_to 'بازگشت', new_topic_path %>
