@@ -10,3 +10,10 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w( bootstrap-rtl)
 Rails.application.config.assets.precompile += %w( bootstrap-rtl.min)
+# Rails.application.config.assets.precompile += %w( tasks.js)
+# Rails.application.config.assets.precompile += %w( bootstrap-switch.js)
+# Rails.application.config.assets.precompile += %w( form-component.js)
+# Rails.application.config.assets.precompile += %w( Chart.js)
+# Rails.application.config.assets.precompile += %w( bootstrap.min.js)
+# Rails.application.config.assets.precompile += %w( chartjs-conf.js)
+# Rails.application.config.assets.precompile += %w( common-scripts.js)

@@ -1,47 +1,69 @@
-<%= simple_form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<%= form_for @question, :html => { :class => "form-horizontal question" } do |f| %>
 
-      <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @question.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
-<br>
- <%= f.association :topic, label: 'عناوین' ,include_blank: false%>
-<br>
-  <%= f.input :qtext ,label: 'متن‌سوال'%>
-  <%= f.input :wrong1 ,label: 'پاسخ‌اشتباه۱'%>
-  <%= f.input :wrong2 ,label: 'پاسخ‌اشتباه۲'%>
-  <%= f.input :wrong3 ,label: 'پاسخ‌اشتباه۳'%>
-  <%= f.input :correct ,label: 'پاسخ‌صحیح'%>
-  <%= f.button :button, "ایجاد سوال" %>
-  <!--<div class="field">
-    <%= f.label :متن‌سوال %><br>
-    <%= f.text_area :qtext %>
+
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
   </div>
-  <div class="field">
-    <%= f.label :پاسخ‌اشتباه۱ %><br>
-    <%= f.text_field :wrong1 %>
+  <div class="form-group">
+    <%= f.label :ture_answer, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ture_answer, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ture_answer) %>
   </div>
-  <div class="field">
-    <%= f.label :پاسخ‌اشتباه۲ %><br>
-    <%= f.text_field :wrong2 %>
+  <div class="form-group">
+    <%= f.label :false_answer1, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :false_answer1, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:false_answer1) %>
   </div>
-  <div class="field">
-    <%= f.label :پاسخ‌اشتباه۳ %><br>
-    <%= f.text_field :wrong3 %>
+  <div class="form-group">
+    <%= f.label :fasle_answer2, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fasle_answer2, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fasle_answer2) %>
   </div>
-  <div class="field">
-    <%= f.label :پاسخ‌صحیح %><br>
-    <%= f.text_field :correct %>
+  <div class="form-group">
+    <%= f.label :false_answer3, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :false_answer3, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:false_answer3) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :group_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :group_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:group_id) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>-->
-    
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                questions_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
 <% end %>

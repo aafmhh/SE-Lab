@@ -16,4 +16,13 @@ class RegistrationController < Devise::RegistrationsController
 		Profile.create(:user_id => resource.id)
 		after_sign_up_path_for(resource)
 	end
+
+	# def update
+	# 	respond_to do |format|
+	# 		if @user.update(user_params)
+	# 			format.html { redirect_to @user, notice: 'user was successfully updated.' }
+	# 		else
+	# 			format.html { render :edit }
+	# 	end
+	# end
 end

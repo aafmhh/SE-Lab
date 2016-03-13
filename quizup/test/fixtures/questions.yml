@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  qtext: MyText
-  wrong1: MyString
-  wrong2: MyString
-  wrong3: MyString
-  correct: MyString
-  topic_id: 1
+  description: MyText
+  ture_answer: MyString
+  false_answer1: MyString
+  fasle_answer2: MyString
+  false_answer3: MyString
+  group_id: 1
 
 two:
-  qtext: MyText
-  wrong1: MyString
-  wrong2: MyString
-  wrong3: MyString
-  correct: MyString
-  topic_id: 1
+  description: MyText
+  ture_answer: MyString
+  false_answer1: MyString
+  fasle_answer2: MyString
+  false_answer3: MyString
+  group_id: 1

@@ -1,10 +1,8 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do   #match "/topics/mytopics" => "topics#mytopics", :via => :get
+
+  resources :groups
   resources :questions
-
-  resources :topics
-   #match "/topics/mytopics" => "topics#mytopics", :via => :get
-
-  resources :categories
+  resources :quizzes
 
   devise_for :users
   get 'home/index'
@@ -15,11 +13,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'home#index'
 
+  # devise_for :user, :controllers => { :registrations => "registrations"} 
+  # match ':controller(/:action(/:id))', :via => [:get, :post]
   #get 'users/sign_out' => "devise/sessions#destroy"
 
   devise_scope :user do 
     get 'users/sign_out' => "devise/sessions#destroy"
-
+    put '/users/edit' => "devise/registrations#update"
     patch 'users/sign_in' => "devise/sessions#new"
 
   end

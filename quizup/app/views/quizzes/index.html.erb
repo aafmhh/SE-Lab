@@ -1,0 +1,58 @@
+<%- model_class = Quiz -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:group_id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id1) %></th>
+      <th><%= model_class.human_attribute_name(:user_id2) %></th>
+      <th><%= model_class.human_attribute_name(:player_one_score) %></th>
+      <th><%= model_class.human_attribute_name(:player_two_score) %></th>
+      <th><%= model_class.human_attribute_name(:question_id1) %></th>
+      <th><%= model_class.human_attribute_name(:question_id2) %></th>
+      <th><%= model_class.human_attribute_name(:question_id3) %></th>
+      <th><%= model_class.human_attribute_name(:question_id4) %></th>
+      <th><%= model_class.human_attribute_name(:question_id5) %></th>
+      <th><%= model_class.human_attribute_name(:question_id6) %></th>
+      <th><%= model_class.human_attribute_name(:question_id7) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @quizzes.each do |quiz| %>
+      <tr>
+        <td><%= link_to quiz.id, quiz_path(quiz) %></td>
+        <td><%= quiz.group_id %></td>
+        <td><%= quiz.user_id1 %></td>
+        <td><%= quiz.user_id2 %></td>
+        <td><%= quiz.player_one_score %></td>
+        <td><%= quiz.player_two_score %></td>
+        <td><%= quiz.question_id1 %></td>
+        <td><%= quiz.question_id2 %></td>
+        <td><%= quiz.question_id3 %></td>
+        <td><%= quiz.question_id4 %></td>
+        <td><%= quiz.question_id5 %></td>
+        <td><%= quiz.question_id6 %></td>
+        <td><%= quiz.question_id7 %></td>
+        <td><%=l quiz.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_quiz_path(quiz), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      quiz_path(quiz),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_quiz_path,
+            :class => 'btn btn-primary' %>

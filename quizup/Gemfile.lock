@@ -156,9 +156,6 @@ GEM
       rdoc (~> 4.0)
     simple_captcha2 (0.4.0)
       rails (>= 4.1)
-    simple_form (3.2.1)
-      actionpack (> 4, < 5.1)
-      activemodel (> 4, < 5.1)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -223,7 +220,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_captcha2
-  simple_form
   spring
   sqlite3
   therubyracer

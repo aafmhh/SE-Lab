@@ -11,23 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306174551) do
+ActiveRecord::Schema.define(version: 20160313052557) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "groups", force: :cascade do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text     "qtext"
-    t.string   "wrong1"
-    t.string   "wrong2"
-    t.string   "wrong3"
-    t.string   "correct"
-    t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.string   "ture_answer"
+    t.string   "false_answer1"
+    t.string   "fasle_answer2"
+    t.string   "false_answer3"
+    t.integer  "group_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "user_id1"
+    t.integer  "user_id2"
+    t.integer  "player_one_score"
+    t.integer  "player_two_score"
+    t.integer  "question_id1"
+    t.integer  "question_id2"
+    t.integer  "question_id3"
+    t.integer  "question_id4"
+    t.integer  "question_id5"
+    t.integer  "question_id6"
+    t.integer  "question_id7"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "simple_captcha_data", force: :cascade do |t|
@@ -38,15 +56,6 @@ ActiveRecord::Schema.define(version: 20160306174551) do
   end
 
   add_index "simple_captcha_data", ["key"], name: "idx_key"
-
-  create_table "topics", force: :cascade do |t|
-    t.string   "name"
-    t.string   "language"
-    t.integer  "category_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

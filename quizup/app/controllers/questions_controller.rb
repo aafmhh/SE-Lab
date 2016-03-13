@@ -14,7 +14,6 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @topic= Topic.find_by_id(params[:topic_id])
     @question = Question.new
   end
 
@@ -25,11 +24,8 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-
-    @topic= Topic.find_by_id(params[:topic_id])
     @question = Question.new(question_params)
-    @question.topic = @topic
-    #@question = @topic.questions.build(question_params)
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
@@ -73,6 +69,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:qtext, :wrong1, :wrong2, :wrong3, :correct, :topic_id)
+      params.require(:question).permit(:description, :ture_answer, :false_answer1, :fasle_answer2, :false_answer3, :group_id)
     end
 end
